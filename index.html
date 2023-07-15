@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Name:</label><br />
+      <input type="text" name="name" id="name" /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" name="email" id="email" /><br />
+
+      <label for="phn-no">Phone Number:</label><br />
+      <input type="text" name="phn-no" id="phn-no" /><br />
+
+      <button type="button" class="btn">SUBMIT</button>
+      <div class="msg"></div>
+    </form>
+
+    <script>
+      document
+        .getElementsByClassName("btn")[0]
+        .addEventListener("click", () => {
+          if (
+            document.getElementById("name").value == "" ||
+            document.getElementById("email").value == "" ||
+            document.getElementById("phn-no").value == ""
+          ) {
+            alert("Please fill all the details");
+          } else {
+            document.getElementsByClassName("msg")[0].textContent =
+              "Hey Welcome " + document.getElementById("name").value;
+            console.log("Name: " + document.getElementById("name").value);
+            console.log("Email: " + document.getElementById("email").value);
+            console.log(
+              "Phone Number: " + document.getElementById("phn-no").value
+            );
+          }
+        });
+
+      document
+        .getElementsByClassName("btn")[0]
+        .addEventListener("mouseout", () => {
+          document.getElementsByClassName("btn")[0].style.backgroundColor =
+            "orange";
+        });
+
+      document
+        .getElementsByClassName("btn")[0]
+        .addEventListener("mouseover", () => {
+          document.getElementsByClassName("btn")[0].style.backgroundColor =
+            "red";
+        });
+    </script>
+  </body>
+</html>
